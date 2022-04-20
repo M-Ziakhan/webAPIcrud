@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "email2";
+    Layout = null;
+}
+
+<div id="invoice" style=" width: 100%;font-family: arial;">
+    <div class="invoice">
+        <div>
+            <header>
+                <div class="row">
+                    <div class="col" style="text-align: center;">
+
+                        <img src="https://online.umt.edu.pk/img/UMT_Logo.png" height="100" width="100" data-holder-rendered="true">
+
+                        <div class="col invoice-details" style="text-align: center;">
+                            <h1 class="invoice-id" style="margin-top: 0;color: #3989c6;">
+                                Today Classes Statistics
+                            </h1>
+
+                        </div>
+                    </div>
+
+                </div>
+            </header>
+            <main style="padding-bottom: 50px;">
+                <div class="row contacts" style="margin-bottom: 20px; text-align: center;">
+                    <div class="col invoice-to">
+                        <div class="text-gray-light text-uppercase">Class statistics email to:</div>
+                        <h2 class="to" style="margin-top: 0;margin-bottom: 0;">
+                            {name}
+                        </h2>
+
+                        <div class="email" style="
+    /* margin-bottom: 0; */"><a href="mailto:jo">{email}</a></div>
+                    </div>
+
+                </div>
+                <div class="table-responsive">
+                    <table border="1" cellspacing="0" cellpadding="0" style="Width: 100%;">
+                        <thead style="font-size: 14px; color: #FFFF; background-color: #1B4B84; text-align-last: center;">
+                            <tr>
+
+                                <th class="qty" style="padding: 5px;"><b>Total Classes</b></th>
+                                <th class="qty" style="color: #fff;padding: 5px;"><b>Completed</b></th>
+                                <th class="qty" style="color: #fff;padding: 5px;"><b>Late</b></th>
+                                <th class="qty" style="color: #fff; padding: 5px;"><b>Incomplete</b></th>
+                                <th class="qty" style="padding: 5px;">
+                                    <b style="">Not Held</b>
+                                </th>
+
+                            </tr>
+                        </thead>
+                        <tr style="text-align-last: center;">
+                            <th>10</th>
+                            <th>7</th>
+                            <th>1</th>
+                            <th>1</th>
+                            <th>1</th>
+                            
+                        </tr>
+                        <tbody>
+                            <tr></tr>
+                        </tbody>
+                    </table>
+</div>
+            </main>
+            <footer style="
+    width: 100%;
+    text-align: center;
+    color: #777;
+    border-top: 1px solid #aaa;
+    padding: 8px 0;
+">
+                This is a system generated email – please do not reply to it. If you have any queries regarding your detail please email erpteam@umt.edu.pk
+
+            </footer>
+        </div>
+        <!--DO NOT DELETE THIS div. IT is responsible for showing footer always at the bottom-->
+        <div></div>
+    </div>
+</div>
+

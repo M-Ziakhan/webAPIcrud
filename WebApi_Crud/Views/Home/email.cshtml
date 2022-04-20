@@ -1,0 +1,116 @@
+﻿
+@{
+    ViewBag.Title = "email";
+    Layout = null;
+}
+
+
+
+<div id="invoice" style="width: 100%;font-family: arial;">
+    <div class="invoice">
+        <div>
+            <header>
+                <div class="row">
+                    <div class="col" style="text-align: center;">
+                        
+                            <img src="https://online.umt.edu.pk/img/UMT_Logo.png" height="100" width="100" data-holder-rendered="true">
+                        
+                        <div class="col invoice-details" style="text-align: center;">
+                            <h1 class="invoice-id" style="margin-top: 0;color: #3989c6;">
+                                Today Classes Statistics
+                            </h1>
+
+                        </div>
+                    </div>
+                    <!--<div class="col company-details">
+                        <h2 class="name">
+                            <a target="_blank" href="https://lobianijs.com">
+                                Arboshiki
+                            </a>
+                        </h2>
+                        <div>455 Foggy Heights, AZ 85004, US</div>
+                        <div>(123) 456-789</div>
+                        <div>company@example.com</div>
+                    </div>-->
+                </div>
+            </header>
+            <main style="padding-bottom: 50px;">
+                <div class="row contacts" style="margin-bottom: 20px; text-align: center;">
+                    <div class="col invoice-to">
+                        <div class="text-gray-light text-uppercase">Class statistics email to:</div>
+                        <h2 class="to" style="margin-top: 0;margin-bottom: 0;">
+                            {name}
+                        </h2>
+
+                        <div class="email" style="/* margin-bottom: 0; */">
+                            <a href="mailto:jo">{email}</a>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="table-responsive">
+                    <table border="1" cellspacing="0" cellpadding="0" style="Width: 100%;">
+                        <thead style="font-size: 14px; color: #FFFF; background-color: #1B4B84; text-align-last: center;">
+                            <tr>
+                                <th class="qty"><b>Faculty</b></th>
+                                <th class="qty"><b>Email</b></th>
+                                <th class="qty"><b>Total Classes</b></th>
+                                <th class="qty"><b>Completed</b></th>
+                                <th class="qty"><b>Late</b></th>
+                                <th class="qty"><b>Incomplete</b></th>
+                                <th class="qty"><b>Not Held</b></th>
+                            </tr>
+                        </thead>
+                        <tr style="text-align-last: center;">
+                            <th>xyz</th>
+                            <th>abc@gmail.com</th>
+                            <th>10</th>
+                            <th>7</th>
+                            <th>1</th>
+                            <th>1</th>
+                            <th>1</th>
+                        </tr>
+                        <tbody>
+                           <tr>
+
+                           </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </main>
+            <footer style="
+    width: 100%;
+    text-align: left;
+    color: #777;
+    /*border-top: 1px solid #aaa;*/
+    padding: 8px 0;
+">
+                <br>
+                <b>System Process:</b> As usual practice Start Lecture on attendance portal as per system schedule.
+                Press End Lecture Button (next to the Start Lecture Button on attendance portal) before leaving your class on the attendance portal.<br>
+
+                <br>
+
+                <b>Completed:</b> Class started within in15 min at defined start time e.g. 9: 30 am and also End Lecture button pressed on attendance portal within 15 minutes after Cass End time will be marked as Completed Class
+                <br>
+
+                <br>
+                <b>Not Held Class:</b> Any Class which has not been started within defined slot time e.g. 9:30AM to 10:45AM, System will mark any such classes as Not Held.
+                <br>
+                <br>
+
+                <b>Late Class:</b> Any Class started after 15min of defined start time e.g. 9: 30am and class start 9:46 am system will mark such classes as Late Class.
+                <br><br>
+
+
+                <b>Incomplete Class:</b> Lecture was started with-in Slot time but faculty didn’t press the end lecture button at the End of the class will be marked as Incomplete Class.<br>
+                <br> <br>    This is an system generated email – please do not reply to it. If you have any queries regarding your detail please email erpteam@umt.edu.pk
+                <br>
+
+            </footer>
+        </div>
+        <!--DO NOT DELETE THIS div. IT is responsible for showing footer always at the bottom-->
+        <div></div>
+    </div>
+</div>

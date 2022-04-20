@@ -1,0 +1,118 @@
+﻿@model IEnumerable<WebApi_Crud.Models.Employee>
+
+@{
+    ViewBag.Title = "Emp";
+}@*<script src="https://www.google.com/recaptcha/api.js"></script>*@
+<script type="text/javascript"
+        src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script> <h2>Emp</h2>
+<script src="https://www.recaptcha.net/recaptcha/api.js" async defer></script>
+<p>
+    @Html.ActionLink("Create New", "Creat")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.gender)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.age)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.designation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.salary)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.designation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.salary)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                @*<input type="button" @item.id value="Delete" onclick="location.href='@Url.Action("Delete", "Home")'" />*@
+                @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                @*@Html.ActionLink("Delete", "Delete", new { id = item.id })*@
+                <button type="button" id="@item.id" class="svn btn btn-danger">Delete</button>
+
+            </td>
+        </tr>
+    }
+
+</table>
+<div class="g-recaptcha"
+     data-sitekey="6Ldbdg0TAAAAAI7KAf72Q6uagbWzWecTeBWmrCpJ"></div>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+
+    $(".svn").click(function () {
+        //alert("The paragraph was clicked.");
+        debugger;
+        var idvalue = $("#myBtn").val();
+    var id = $(this).attr("id");
+        debugger;
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                deleteID(id);
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                )
+                setTimeout(function () {
+
+                    window.location.reload();
+
+                }, 5000);
+            }
+        })
+        //location.reload();
+    });
+    function deleteID(id) {
+        $.ajax({
+            url: '/Home/Delete',
+            data: { id: id },
+            success: function (Data) {
+                alert("Done");
+            },
+            error: function (XMLHttpRequest, textStatus, errorThrown) {
+
+            }
+        });
+    }
+
+</script>
+
